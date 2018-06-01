@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block title %}
+    <div align="center">
+    <img src="{% static "bret/bgse2.png" %}"/><br />
+    Welcome
+    </div>
+{% endblock %}
+
+{% block content %}
+<div align="center">
+    <p>
+        You are about to start the game.<br />
+        Before we begin, please answer the following:
+    </p>
+
+    {% formfield player.gender label="What is your gender?" %}
+    {% formfield player.name label="What is your name?" %}
+    {% next_button %}
+</div>
+{% endblock %}
