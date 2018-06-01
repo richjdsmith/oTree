@@ -47,7 +47,7 @@ class Constants(BaseConstants):
     # show feedback by resolving boxes, i.e. toggle boxes and show whether bomb was collected or not
     # if <feedback = True>, the button "Solve" will be rendered and active after game play ends ("Stop")
     # if <feedback = False>, the button "Solve" won't be rendered such that no feedback about game outcome is provided
-    feedback = True
+    feedback = False
 
     # show results page summarizing the game outcome
     # if <results = True>, a separate page containing all relevant information is displayed after finishing the task
@@ -68,7 +68,7 @@ class Constants(BaseConstants):
 
     # time interval between single boxes being collected (in seconds)
     # note that this only affects game play if <dynamic = True>
-    time_interval = 0.5
+    time_interval = 0.4
 
     # collect boxes randomly or systematically
     # if <random = False>, boxes are collected row-wise one-by-one, starting in the top-left corner

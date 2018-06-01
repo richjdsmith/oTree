@@ -55,9 +55,7 @@ class Player(BasePlayer):
     )
 
     age = models.IntegerField()
-
-
-    name = models.StringField()
+    amazon_turk_id = models.StringField()
 
     def set_payoff(self):
 

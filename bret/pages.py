@@ -16,7 +16,7 @@ class Questions(Page):
         return self.subsession.round_number == 1
 
     form_model = 'player'
-    form_fields = ['gender','name']
+    form_fields = ['gender','age','amazon_turk_id']
 
 
 # ******************************************************************************************************************** #
