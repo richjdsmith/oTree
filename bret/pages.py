@@ -92,11 +92,11 @@ class Results(Page):
 
     # only display results after all rounds have been played
     def is_displayed(self):
-        return self.subsession.round_number == 4
+        return self.subsession.round_number == 5
 
     # variables for use in template
     def vars_for_template(self):
-        payoff_round = random.randint(1,4)
+        payoff_round = random.randint(2,5)
         total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
         self.participant.vars['bret_payoff'] = total_payoff
 
@@ -120,7 +120,7 @@ class Results(Page):
 # ******************************************************************************************************************** #
 class Competitive(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 5
+        return self.subsession.round_number == 6
 
 
 
@@ -130,7 +130,7 @@ class Competitive(Page):
 # ******************************************************************************************************************** #
 class ResultsFinal(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 5
+        return self.subsession.round_number == 6
 
 
 # ******************************************************************************************************************** #

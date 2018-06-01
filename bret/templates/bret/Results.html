@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Indevidual results" %}
+    {% trans "Individual results" %}
 {% endblock %}
 
 
@@ -56,7 +56,7 @@
     {% else %}
         <div class="card card-info">
             {% blocktrans trimmed with num_rounds=Constants.num_rounds %}
-                The table below summarizes the results of your decisions in the 4 individual rounds played.
+                The table below summarizes the results of your decisions in the 5 individual rounds played, which includes your practice (first) round.
             {% endblocktrans %}
         </div>
     {% endif %}
@@ -76,28 +76,28 @@
                     <tr>
                         <th>{% trans "Round No." %}</th>
                         <th>{% trans "No. of Boxes Collected" %}</th>
-                        <th>{% trans "Bomb Collected" %}</th>
-                        <th>{% trans "Round Payoff" %}</th>
+                        <!-- <th>{% trans "Bomb Collected" %}</th>
+                        <th>{% trans "Round Payoff" %}</th> -->
                     </tr>
                     {% for p in player_in_all_rounds %}
                     <tr>
                         <td>{{ p.subsession.round_number }}</td>
                         <td>{{ p.boxes_collected }}</td>
-                        <td>
+                        <!-- <td>
                             {% if p.bomb %}
                                 {% trans "Yes" %}
                             {% else %}
                                 {% trans "No" %}
                             {% endif %}
                         </td>
-                        <td>{{ p.round_result }}</td>
+                        <td>{{ p.round_result }}</td> -->
                     </tr>
                     {% endfor %}
                 </table>
             </div>
         </div>
 
-        <div class="card card-info">
+        <!-- <div class="card card-info">
         {% if Constants.random_payoff %}
                 {% blocktrans trimmed %}
                     For your payment, round number {{ round_to_pay }} was randomly chosen. <br/>
@@ -108,7 +108,7 @@
                     For your payment a random payoff from the list above will be chosen.
                 {% endblocktrans %}
         {% endif %}
-        </div>
+        </div> -->
     {% endif %}
 
     <br/>

@@ -32,7 +32,7 @@ class Constants(BaseConstants):
     box_width = '40px'
 
     # number of rounds to be played
-    num_rounds = 5
+    num_rounds = 6
 
     # determines whether all rounds played are payed-off or whether one round is randomly chosen for payment
     # if <random_payoff = True>, one round is randomly determined for payment
