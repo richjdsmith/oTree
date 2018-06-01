@@ -60,6 +60,9 @@
 {# ****************************************************************************************************************** #}
 {% block title %}
     {% trans "Your Decision" %}
+    {% if subsession.round_number < 2 %}
+        <h4><em>This is Round 1. It is a practice round for you to become familiar with how the game works.</em></h4>
+    {% endif %}
 {% endblock %}
 
 

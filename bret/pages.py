@@ -54,6 +54,9 @@ class Decision(Page):
         'bomb_col',
     ]
 
+    def current_round_number(self):
+        return self.subsession.round_number
+
     # BRET settings for Javascript application
     def vars_for_template(self):
         reset = self.participant.vars.get('reset',False)
@@ -131,6 +134,25 @@ class Competitive(Page):
 class ResultsFinal(Page):
     def is_displayed(self):
         return self.subsession.round_number == 6
+
+    def vars_for_template(self):
+        payoff_round = random.randint(2,5)
+        total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
+        self.participant.vars['bret_payoff'] = total_payoff
+
+        return {
+            'player_in_all_rounds':   self.player.in_all_rounds(),
+            'box_value':              Constants.box_value,
+            'boxes_total':            Constants.num_rows * Constants.num_cols,
+            'boxes_collected':        self.player.boxes_collected,
+            'bomb':                   self.player.bomb,
+            'bomb_row':               self.player.bomb_row,
+            'bomb_col':               self.player.bomb_col,
+            'round_result':           self.player.round_result,
+            'round_to_pay':           payoff_round,
+            'payoff':                 self.player.payoff,
+            'total_payoff':           total_payoff,
+        }
 
 
 # ******************************************************************************************************************** #

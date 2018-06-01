@@ -28,4 +28,54 @@
         Thank you for participating. Your payoff will be determined shortly.
     </p>
 
+<!-- ----------------------------------------------------------------------------------------------------------- --> 
+<!-- history table -->
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+    {% if Constants.num_rounds > 1 %}
+        <div class="card">
+            <div class="card-header">
+                <b>{% trans "Round History" %}</b>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>{% trans "Round Type" %}</th>
+                        <th>{% trans "Round No." %}</th>
+                        <th>{% trans "No. of Boxes Collected" %}</th>
+                        <th>{% trans "Bomb Collected" %}</th>
+                        <th>{% trans "Round Payoff" %}</th>
+                    </tr>
+                    {% for p in player_in_all_rounds %}
+                    <tr>
+                        <td>
+                            {% if p.subsession.round_number < 2 %}
+                                {% trans "Practice" %}
+                            {% elif p.subsession.round_number <= 5  %}
+                                {% trans "Individual" %}
+                            {% else %}
+                                {% trans "Competitive" %}
+                            {% endif %}
+                        </td>
+                        <td>{{ p.subsession.round_number }}</td>
+                        <td>{{ p.boxes_collected }}</td>
+                        <td>
+                            {% if p.bomb %}
+                                {% trans "Yes" %}
+                            {% else %}
+                                {% trans "No" %}
+                            {% endif %}
+                        </td>
+                        <td>{{ p.round_result }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <div class="card card-info">
+        <p>You will recieve a bonus payment on amazon turk in the next 1-3 days if you won the final competitive round.</p>
+        </div>
+    {% endif %}    
+
 {% endblock %}
