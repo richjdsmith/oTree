@@ -61,7 +61,6 @@ class Player(BasePlayer):
 
     age = models.IntegerField()
     amazon_turk_id = models.StringField()
-
     def set_payoff(self):
 
         # determine round_result as (potential) payoff per round

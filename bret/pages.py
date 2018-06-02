@@ -127,7 +127,8 @@ class Competitive(Page):
 
     def vars_for_template(self):
         return {
-            'treatment': self.participant.vars['treatment']
+            'treatment': self.participant.vars['treatment'],
+           
         }
 
 
@@ -156,6 +157,7 @@ class ResultsFinal(Page):
             'round_to_pay':           payoff_round,
             'payoff':                 self.player.payoff,
             'total_payoff':           total_payoff,
+            'naw': self.participant.code,
         }
 
 
