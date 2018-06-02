@@ -24,10 +24,19 @@
 {# ****************************************************************************************************************** #}
 {% block content %}
 
-    <p>
-        For the next round, you will compete with another participant of the opposite gender. Only the person with the highest payoff
-        will receive the corresponding payment.
-    </p>
-    <br/>
+   {% if treatment == 't1' %}
+    <h1>This will display if Treatment 1 - Place Treatment information here.</h1>
+   {% elif treatment == 't2' %} 
+   <h1>This will display if Treatment 2 - Place Treatment information here.</h1>
+   {% elif treatment == 't3' %} 
+   <h1>This will display if Treatment 3 - Place Treatment information here.</h1>
+   {% elif treatment == 'Control' %}
+   <h1>This will display if Control Group - Place Treatment information here.</h1>
+   {% endif %}
+        <p>
+            For the next round, you will compete with another participant of the opposite gender. Only the person with the highest payoff
+            will receive the corresponding payment.
+        </p>
+        <br/>
     {% next_button %}
 {% endblock %}

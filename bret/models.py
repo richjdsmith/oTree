@@ -17,7 +17,10 @@ Bomb Risk Elicitation Task (BRET) à la Crosetto/Filippin (2013), Journal of Ris
 # *** CLASS SUBSESSION *** #
 # ******************************************************************************************************************** #
 class Subsession(BaseSubsession):
-    pass
+    def creating_session(self):
+        if self.round_number == 1:
+            for p in self.get_players():
+                p.participant.vars['treatment'] = random.choice(['control', 't1', 't2', 't3'])
 
 # ******************************************************************************************************************** #
 # *** CLASS GROUP *** #
@@ -53,6 +56,8 @@ class Player(BasePlayer):
             [1, 'Female'],
         ]
     )
+
+    treatment = models.StringField()
 
     age = models.IntegerField()
     amazon_turk_id = models.StringField()

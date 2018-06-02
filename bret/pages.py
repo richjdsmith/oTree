@@ -125,6 +125,10 @@ class Competitive(Page):
     def is_displayed(self):
         return self.subsession.round_number == 6
 
+    def vars_for_template(self):
+        return {
+            'treatment': self.participant.vars['treatment']
+        }
 
 
 
