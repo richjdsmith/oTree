@@ -61,9 +61,10 @@
 {% block title %}
     {% if subsession.round_number < 2 %}
         {% trans "Practice Round" %}
-        <h4><em>This is Round 1. It is a practice round for you to become familiar with how the game works.</em></h4>
-    {% else %}
+    {% elif subsession.round_number == 2 %}
         {% trans "Recoreded Round" %}
+    {% elif subsession.round_number > 2 %}
+        {% trans "Competition Round" %}
     {% endif %}
 {% endblock %}
 
@@ -72,6 +73,11 @@
 {# *** CONTENT *** #}
 {# ****************************************************************************************************************** #}
 {% block content %}
+    {% if subsession.round_number < 2 %}
+        <p>This is the first round. It is a practice round for you to become familiar with how the game works.</p>
+    {% elif subsession.round_number == 2 %}
+        <p>This Round is eligible for the potential bonus payment. </p>
+    {% endif %}
     <div class="panel panel-primary">
             <div
                 id="bomb-task"

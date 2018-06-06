@@ -110,31 +110,31 @@ class Decision(Page):
 # ******************************************************************************************************************** #
 # *** CLASS RESULTS *** #
 # ******************************************************************************************************************** #
-class Results(Page):
+# class Results(Page):
 
-    # only display results after all rounds have been played
-    def is_displayed(self):
-        return self.subsession.round_number == 6
+#     # only display results after all rounds have been played
+#     def is_displayed(self):
+#         return self.subsession.round_number == 2
 
-    # variables for use in template
-    def vars_for_template(self):
-        payoff_round = random.randint(3,6)
-        total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
-        self.participant.vars['bret_payoff'] = total_payoff
+#     # variables for use in template
+#     def vars_for_template(self):
+#         payoff_round = random.randint(3,3)
+#         total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
+#         self.participant.vars['bret_payoff'] = total_payoff
 
-        return {
-            'player_in_all_rounds':   self.player.in_all_rounds(),
-            'box_value':              Constants.box_value,
-            'boxes_total':            Constants.num_rows * Constants.num_cols,
-            'boxes_collected':        self.player.boxes_collected,
-            'bomb':                   self.player.bomb,
-            'bomb_row':               self.player.bomb_row,
-            'bomb_col':               self.player.bomb_col,
-            'round_result':           self.player.round_result,
-            'round_to_pay':           payoff_round,
-            'payoff':                 self.player.payoff,
-            'total_payoff':           total_payoff,
-        }
+#         return {
+#             'player_in_all_rounds':   self.player.in_all_rounds(),
+#             'box_value':              Constants.box_value,
+#             'boxes_total':            Constants.num_rows * Constants.num_cols,
+#             'boxes_collected':        self.player.boxes_collected,
+#             'bomb':                   self.player.bomb,
+#             'bomb_row':               self.player.bomb_row,
+#             'bomb_col':               self.player.bomb_col,
+#             'round_result':           self.player.round_result,
+#             'round_to_pay':           payoff_round,
+#             'payoff':                 self.player.payoff,
+#             'total_payoff':           total_payoff,
+#         }
 
 
 # ******************************************************************************************************************** #
@@ -142,7 +142,7 @@ class Results(Page):
 # ******************************************************************************************************************** #
 class Competitive(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 7
+        return self.subsession.round_number == 3
 
     def vars_for_template(self):
         return {
@@ -157,10 +157,10 @@ class Competitive(Page):
 # ******************************************************************************************************************** #
 class ResultsFinal(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 7
+        return self.subsession.round_number == 3
 
     def vars_for_template(self):
-        payoff_round = random.randint(2,5)
+        payoff_round = random.randint(3,3)
         total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
         self.participant.vars['bret_payoff'] = total_payoff
 
@@ -183,6 +183,6 @@ class ResultsFinal(Page):
 # ******************************************************************************************************************** #
 # *** PAGE SEQUENCE *** #
 # ******************************************************************************************************************** #
-page_sequence = [Questions,Gamedescription, Instructions,Competitive,Decision,Results,ResultsFinal]
+page_sequence = [Questions,Gamedescription, Instructions,Competitive,Decision,ResultsFinal]
 
 
