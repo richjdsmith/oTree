@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Instructions" %}
+    {% trans "First Section Instructions - Please Read Carefully" %}
 {% endblock %}
 
 
@@ -25,44 +25,48 @@
 {% block content %}
 
     <div class="instructions">
-        <h1>CHANELLE TO CHANGE</h1>
         <p>
-            {% blocktrans trimmed %}
-                In the following, you will see a {{ num_rows }}x{{ num_cols }}-matrix containing
-                {{ num_boxes }} boxes on your screen.
-            {% endblocktrans %}
+            There will be two rounds. Before the first round there is a practice round that will not be paid. The second round will be recorded and potentially paid as a bonus payment. 
         </p>
         <p>
-            {% blocktrans trimmed %}
-                As soon as you start the task by hitting the 'Start' button,
-                one of the boxes is collected per second.
-                Once collected, the box is marked by a tick symbol.
-                For each box collected you earn {{ box_value }}.
-            {% endblocktrans %}
+            In each round there are two stages:
         </p>
+        <ul style="list-style-type: none;">
+            <li>
+                Stage 1: You begin collecting boxes by pressing ’Start’ and stop the collection process by hitting ’Stop’. Boxes are collected randomly. Once collected, boxes are marked with a check-mark.
+            </li>
+            <li>
+                Stage 2: You submit your collected boxes and finish the round. To submit your collected boxes and move to the next round, hit ’Next’.
+            </li>
+        </ul>
+        <p>Your results will be recorded and provided to you only once you have completed both sections of the experiment. </p>
+        <h4>Types of Boxes</h4>
         <p>
-            {% blocktrans trimmed %}
-                Behind one of the boxes hides a bomb that destroys everything that has been collected.
-                The remaining {{ num_nobomb }} boxes are worth {{ box_value }} each.
-                You do not know where the bomb is located.
-                You only know that the bomb can be in any place with equal probability.
-            {% endblocktrans %}
+            There are two types of boxes: bomb-boxes and point-boxes.
         </p>
-        <p>
-            {% blocktrans trimmed %}
-                Your task is to choose when to stop the collecting process. You do so by hitting 'Stop' at any time.
-                If you collect the box where the bomb is located, the bomb will explode and you will earn zero.
-                If you stop before collecting the bomb, you gain the amount accumulated that far.
-            {% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans trimmed %}
-                At the end of the task boxes are toggled by hitting the 'Solve' button. That will reveal the contents of your boxes.
-                A dollar sign or a fire symbol (for the bomb) will be shown on each of your collected boxes.
-            {% endblocktrans %}
-        </p>
+        <ul>
+            <li>
+                There is one bomb-box hidden amongst the 100 boxes. All other boxes are point-boxes. Points are converted to payoffs at the rate of 1 point =$0.01.
+            </li>
+            <li>
+                Each point-box you collect gives you 1 point. These points are potential and depend on whether you collect a bomb-box.
+            </li>
 
+            <li>
+                <strong>If there is a bomb:</strong> If you collect the bomb-box, all your earnings for that round are destroyed and you receive nothing. 
+            </li>
+        
+            <li>
+                You do not know where the bomb is. You only know that the bomb can be in any place with equal likelihood.  You will not know if you collected a bomb in any round until the end of the experiment. 
+            </li>
+            <li>
+                Each round is independent. If you collect a bomb in one round, it has no eﬀect on the earnings from previous or subsequent rounds. 
+            </li>
+        </ul>
+        <br>
+        <p> <strong> We now begin the game with a trial-round. The results from this trial-round will not be recorded, nor will they be eligible for the potential bonus payment. </strong></p>
     </div>
+
 
      {% next_button %}
 {% endblock %}

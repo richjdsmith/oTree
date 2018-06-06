@@ -18,6 +18,25 @@ class Questions(Page):
     form_model = 'player'
     form_fields = ['gender','age','amazon_turk_id']
 
+# ******************************************************************************************************************** #
+# *** CLASS GAME *** #
+# ******************************************************************************************************************** #
+class Gamedescription(Page):
+
+    # only display instruction in round 1
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    # variables for use in template
+    def vars_for_template(self):
+        return {
+
+        }
+
+
+# ******************************************************************************************************************** #
+# *** CLASS BOMB RISK ELICITATION TASK *** #
+# ******************************************************************************************************************** #
 
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #
@@ -95,11 +114,11 @@ class Results(Page):
 
     # only display results after all rounds have been played
     def is_displayed(self):
-        return self.subsession.round_number == 5
+        return self.subsession.round_number == 6
 
     # variables for use in template
     def vars_for_template(self):
-        payoff_round = random.randint(2,5)
+        payoff_round = random.randint(3,6)
         total_payoff = ([p.payoff for p in self.player.in_all_rounds()])
         self.participant.vars['bret_payoff'] = total_payoff
 
@@ -123,7 +142,7 @@ class Results(Page):
 # ******************************************************************************************************************** #
 class Competitive(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 6
+        return self.subsession.round_number == 7
 
     def vars_for_template(self):
         return {
@@ -138,7 +157,7 @@ class Competitive(Page):
 # ******************************************************************************************************************** #
 class ResultsFinal(Page):
     def is_displayed(self):
-        return self.subsession.round_number == 6
+        return self.subsession.round_number == 7
 
     def vars_for_template(self):
         payoff_round = random.randint(2,5)
@@ -164,6 +183,6 @@ class ResultsFinal(Page):
 # ******************************************************************************************************************** #
 # *** PAGE SEQUENCE *** #
 # ******************************************************************************************************************** #
-page_sequence = [Questions,Instructions,Competitive,Decision,Results,ResultsFinal]
+page_sequence = [Questions,Gamedescription, Instructions,Competitive,Decision,Results,ResultsFinal]
 
 
