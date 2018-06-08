@@ -30,10 +30,10 @@
             </p>
             <ul>
                 <li>
-                    The participant with the highest number of points will win.  Winners have an increased probability of being selected to receive the bonus payment. 
+                    The participant with the highest number of points will win this round. 
                 </li>
                 <li>
-                    If you win, your payoffs from this round will also be eligible to be randomly selected for payment. 
+                    At the end of the experiment we will randomly select 10% of all winners (including yourself) to be paid out their points in dollars, such that 1 point equals $0.01.
                 </li>
                 <li>
                     If you lose, only your first round will be eligible to be randomly selected for payment.        
@@ -41,18 +41,18 @@
             </ul>
 
             <h5>
-                You have been matched with someone of the opposite sex from yourself. Your payoﬀ in this round is dependent on their performance. Only the person who gets the highest number of points wins.
+                You have been matched with someone of the opposite gender from yourself. Your payoﬀ in this round is dependent on their performance. Only the person who gets the highest number of points wins.
             </h5>
         {% elif treatment == 't2' %} 
             <p>
-                In this next and ﬁnal section, you will play one more round of the exact same task as before, but you will be competing against another participant from Amazon Turk. 
+                In this next and final section, you will play one more round of the exact same task as before, but you will be competing against another participant from Amazon Turk. 
             </p>
             <ul>
                 <li>
-                    The participant with the highest number of points will win.  Winners have an increased probability of being selected to receive the bonus payment. 
+                    The participant with the highest number of points will win this round. 
                 </li>
                 <li>
-                    If you win, your payoffs from this round will also be eligible to be randomly selected for payment. 
+                    At the end of the experiment we will randomly select 10% of all winners (including yourself) to be paid out their points in dollars, such that 1 point equals $0.01.
                 </li>
                 <li>
                     If you lose, only your first round will be eligible to be randomly selected for payment.        
@@ -60,39 +60,20 @@
             </ul>
 
             <h5>
-                You have been matched with someone of the same sex as yourself. Your payoﬀ in this round is dependent on their performance. Only the person who gets the highest number of points wins.
+                You have been matched with someone of the same gender as yourself. Your payoﬀ in this round is dependent on their performance. Only the person who gets the highest number of points wins.
             </h5>
         {% elif treatment == 't3' %} 
         
 
             <p>
-                In this next and ﬁnal section, you will play one more round of the exact same task as before, but you will be competing against another five other participants from Amazon Turk. 
+                In this next and final section, you will play one more round of the exact same task as before, but you will be competing against another five other participants from Amazon Turk. 
             </p>
             <ul>
                 <li>
-                    The participant with the highest number of points will win.  Winners have an increased probability of being selected to receive the bonus payment. 
+                    The participant with the highest number of points will win this round. 
                 </li>
                 <li>
-                    If you win, your payoffs from this round will also be eligible to be randomly selected for payment. 
-                </li>
-                <li>
-                        If you lose, only your first round will be eligible to be randomly selected for payment.  
-                </li>
-            </ul>
-
-            <h5>
-                You have been matched with your 5 opponents. Your payoﬀ in this round is dependent on the performance of all other opponents. Only the person who gets the highest number of points wins.
-            </h5>
-        {% elif treatment == 'control' %}
-            <p>
-                In this next and ﬁnal section, you will play one more round of the exact same task as before, but you will be competing against another participant from Amazon Turk. 
-            </p>
-            <ul>
-                <li>
-                    The participant with the highest number of points will win.  Winners have an increased probability of being selected to receive the bonus payment. 
-                </li>
-                <li>
-                    If you win, your payoffs from this round will also be eligible to be randomly selected for payment. 
+                    At the end of the experiment we will randomly select 10% of all winners (including yourself) to be paid out their points in dollars, such that 1 point equals $0.01.
                 </li>
                 <li>
                     If you lose, only your first round will be eligible to be randomly selected for payment.        
@@ -100,7 +81,26 @@
             </ul>
 
             <h5>
-                You have been matched with another participant. Your payoﬀ in this round is dependent on their performance. Only the person who gets the highest number of points wins.
+                You have been matched with your 5 opponents. Your payoff in this round is dependent on the performance of all other opponents. Only the person who gets the highest number of points wins.
+            </h5>
+        {% elif treatment == 'control' %}
+            <p>
+                In this next and final section, you will play one more round of the exact same task as before, but you will be competing against another participant from Amazon Turk. 
+            </p>
+            <ul>
+                <li>
+                    The participant with the highest number of points will win this round. 
+                </li>
+                <li>
+                    At the end of the experiment we will randomly select 10% of all winners (including yourself) to be paid out their points in dollars, such that 1 point equals $0.01.
+                </li>
+                <li>
+                    If you lose, only your first round will be eligible to be randomly selected for payment.        
+                </li>
+            </ul>
+
+            <h5>
+                You have been matched with another participant. Your payoff in this round is dependent on their performance. Only the person who gets the highest number of points wins.
             </h5>
         {% endif %}
     </div>

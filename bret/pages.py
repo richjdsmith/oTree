@@ -108,13 +108,13 @@ class Decision(Page):
 
 
 # ******************************************************************************************************************** #
-# *** CLASS RESULTS *** #
+# *** AFTER TRIAL ROUND *** #
 # ******************************************************************************************************************** #
-# class Results(Page):
+class Afterpractice(Page):
 
-#     # only display results after all rounds have been played
-#     def is_displayed(self):
-#         return self.subsession.round_number == 2
+    # only display results after all rounds have been played
+    def is_displayed(self):
+        return self.subsession.round_number == 2
 
 #     # variables for use in template
 #     def vars_for_template(self):
@@ -183,6 +183,6 @@ class ResultsFinal(Page):
 # ******************************************************************************************************************** #
 # *** PAGE SEQUENCE *** #
 # ******************************************************************************************************************** #
-page_sequence = [Questions,Gamedescription, Instructions,Competitive,Decision,ResultsFinal]
+page_sequence = [Questions,Gamedescription, Instructions,Afterpractice,Competitive,Decision,ResultsFinal]
 
 

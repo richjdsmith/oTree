@@ -1,0 +1,42 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'bret/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Instructions" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+ 
+
+  <div class="card card-info">
+    <p>To repeat you have just collected several boxes. You do not know whether a selected box has a bomb.
+        You will only be told at the very end of the experiment whether you have collected a bomb. If one of the boxes selected 
+        does contain a bomb, you will receive no points. If you did not collect a bomb, then you will receive X points, where X is 
+        the number of boxes collected in that round.
+    </p>
+    <p>You are now about to play your recorded round. The results from this next round will be eligible for the bonus payment.</p>
+  </div>
+
+
+    <br/>
+    {% next_button %}
+
+{% endblock %}
