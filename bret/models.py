@@ -59,6 +59,9 @@ class Player(BasePlayer):
 
     treatment = models.StringField()
 
+    strategy = models.TextField(blank=True)
+    feedback = models.TextField(blank=True)
+
     age = models.IntegerField()
     amazon_turk_id = models.StringField()
     def set_payoff(self):

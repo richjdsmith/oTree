@@ -178,6 +178,8 @@ class ResultsFinal(Page):
             'total_payoff':           total_payoff,
             'naw': self.participant.code,
         }
+    form_model = 'player'
+    form_fields = ['strategy','feedback']
 
 
 # ******************************************************************************************************************** #

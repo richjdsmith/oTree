@@ -77,6 +77,28 @@
             <h3>Please enter this code into amazon turk to prove completion of experiment: <strong>{{naw}}cad</strong></h3>
             <p> The experiment is now over. You may close this browser tab/window </p>
         </div>
+
+        <div class="card card-info text-centered">
+            
+            <h3>Feedback</h3>
+            While not required, it is appreciated if you could answer a very brief feedback below. <br><br>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        {% formfield player.strategy label="What was your game strategy?" %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        {% formfield player.feedback label="Do you have any feedback?" %}
+                    </div>
+                </div>
+            </div>
+            
+            
+            {% next_button label="Submit" %}
+        </div>
     {% endif %}    
 
 {% endblock %}
