@@ -21,6 +21,8 @@ class Subsession(BaseSubsession):
         if self.round_number == 1:
             for p in self.get_players():
                 p.participant.vars['treatment'] = random.choice(['control', 't1', 't2', 't3'])
+                p.treatment = p.participant.vars['treatment']
+                
 
 # ******************************************************************************************************************** #
 # *** CLASS GROUP *** #

@@ -147,7 +147,7 @@ class Competitive(Page):
     def vars_for_template(self):
         return {
             'treatment': self.participant.vars['treatment'],
-           
+            
         }
 
 
